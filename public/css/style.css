@@ -3,6 +3,8 @@ html {
     height: 100%;
     margin: 0;
     background: #383c3c;
+    background: -webkit-linear-gradient(to right, #383c3c, #383c3c, #383c3c);
+    background: linear-gradient(to right, #383c3c, #383c3c, #383c3c);
 }
 
 .chat {
