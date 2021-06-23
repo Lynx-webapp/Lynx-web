@@ -14,7 +14,7 @@ app.use(require('express').static(__dirname + '/public'));
 process.env.key = 'hey'
 app.use(session({ secret: process.env.key, resave: true, saveUninitialized: true }))
 
-var serveur = "lynxapp-web.herokuapp.com"
+var serveur = "speakjs.herokuapp.com"
 
 app.get('/', (req, res) => {
   if(!req.query.guild) {req.session.guild = serveur}
@@ -99,21 +99,6 @@ app.post('/decrypte', (req, res) => {
 var ws = new wss("ws://" + serveur)
 ws.on('message', m => console.log(m))
 
-const PORT = process.env.PORT || 3000;
-const INDEX = '/views/main.ejs';
-
-const servv = express()
-  .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
-  .listen(PORT, () => console.log(`Listening on ${PORT}`));
-const { Server } = require('ws');
-
-const wss2 = new Server({ servv });
-wss2.on('connection', (ws) => {
-  console.log('Client connected');
-  ws.on('close', () => console.log('Client disconnected'));
-});
-
-setInterval(() => {
-  wss2.clients.forEach((client) => {
-    client.send(new Date().toTimeString());
-  });
+server.listen(process.env.PORT || 3000, () => {
+  console.log(`Listening on port: ${process.env.PORT || 3000}`);
+})
