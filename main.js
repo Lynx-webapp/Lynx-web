@@ -102,12 +102,12 @@ ws.on('message', m => console.log(m))
 const PORT = process.env.PORT || 3000;
 const INDEX = '/views/main.ejs';
 
-const server = express()
+const servv = express()
   .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
 const { Server } = require('ws');
 
-const wss2 = new Server({ server });
+const wss2 = new Server({ servv });
 wss2.on('connection', (ws) => {
   console.log('Client connected');
   ws.on('close', () => console.log('Client disconnected'));
