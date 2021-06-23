@@ -1,2 +1,15 @@
-# speak.js-client
-client speak web
+# Hi !
+
+Lynx is a simple, crypted, and fast cumunication webapp.
+
+## To Do
+
+- [X] Messages
+- [ ] Friends
+- [ ] Guilds
+- [ ] Channels
+- [ ] Avatar upload
+- [ ] Change username
+- [ ] Profile settings
+- [ ] user ID
+- [ ] user TAG
