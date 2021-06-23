@@ -99,6 +99,14 @@ app.post('/decrypte', (req, res) => {
 var ws = new wss("ws://" + serveur)
 ws.on('message', m => console.log(m))
 
-server.listen(process.env.PORT || 3000, () => {
-  console.log(`Listening on port: ${process.env.PORT || 3000}`);
-})
+const PORT = process.env.PORT || 3000;
+const INDEX = '/index.html';
+
+const wsss = new Server({ server });
+const server = express()
+  .listen(PORT, () => console.log(`Listening on ${PORT}`));
+
+wss.on('connection', (ws) => {
+  console.log('Client connected');
+  wss.on('close', () => console.log('Client disconnected'));
+});
