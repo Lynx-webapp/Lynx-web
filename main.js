@@ -112,3 +112,11 @@ wss2.on('connection', (ws) => {
   console.log('Client connected');
   ws.on('close', () => console.log('Client disconnected'));
 });
+
+setInterval(() => {
+  wss2.clients.forEach((client) => {
+    client.send(new Date().toTimeString());
+  });
+  var HOST = location.origin.replace(/^http/, 'ws')
+var ws = new WebSocket(HOST);
+var el;
