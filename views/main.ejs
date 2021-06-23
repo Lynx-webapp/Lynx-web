@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Lynx - Web</title>
+  <title>Speak.js</title>
   <link href="/css/style.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -28,7 +28,7 @@
                     <span class="online_icon"></span>
                   </div>
                   <div class="user_info">
-                    <span>Lynx - Systeme</span>
+                    <span>Lynx Système 🤖</span>
                     <p>En ligne</p>
                   </div>
                 </div>
@@ -46,10 +46,10 @@
             <span id="action_menu_btn"><i class="fas fa-ellipsis-v"></i></span>
             <div class="action_menu">
               <ul>
-                <li><i class="fas fa-user-circle"></i> Voir le profile</li>
+                <li><i class="fas fa-user-circle"></i> View profile</li>
                 <li><i class="fas fa-users"></i> Add to close friends</li>
-                <li><i class="fas fa-plus"></i> Ajouter au groupe</li>
-                <li><i class="fas fa-ban"></i> Bloquer</li>
+                <li><i class="fas fa-plus"></i> Add to group</li>
+                <li><i class="fas fa-ban"></i> Block</li>
               </ul>
             </div>
           </div>
@@ -64,10 +64,10 @@
                 <span class="input-group-text attach_btn"><i class="fas fa-paperclip"></i></span>
               </div>
               <input name="" class="form-control type_msg" id="input" autocomplete="off"
-                placeholder="Ecrivez votre message" />
+                placeholder="Type your message..." />
               <div class="input-group-append">
                 <button style="border: none;outline-style: none;"
-                  class="fas fa-location-arrow input-group-text send_btn" id="send">Envoyer</button>
+                  class="fas fa-location-arrow input-group-text send_btn" id="send">Send</button>
               </div>
             </div>
           </div>
@@ -115,7 +115,7 @@ String.prototype.toHtmlEntities = function() {
             class="rounded-circle user_img_msg">
             </div>
             <div class="msg_cotainer">
-              ${a.content.toHtmlEntities()}
+              test ${a.content.toHtmlEntities()}
               <span class="msg_time">${a.CreatedAt}</span>
             </div>
           </div>
@@ -143,7 +143,7 @@ String.prototype.toHtmlEntities = function() {
         console.log(e)
         if (e.event == 'msg') {
           var item = document.createElement('div')
-          /*item.innerHTML = `
+          item.innerHTML = `
         <div class="d-flex justify-content-start mb-4">
           <div class="img_cont_msg">
             <img src="${e.avatar || 'https://api.multiavatar.com/error.svg'}"
@@ -154,20 +154,7 @@ String.prototype.toHtmlEntities = function() {
               <span class="msg_time">${e.date}</span>
             </div>
           </div>
-        `*/
-          item.innerHTML = `
-          <div class="d-flex justify-content-start mb-4">
-            <div class="img_cont_msg">
-              <img src="${e.avatar || 'https://api.multiavatar.com/error.svg'}"
-                class="rounded-circle user_img_msg">
-            </div>
-            <div class="user_info">
-              <span>${e.user}</span>
-              <p class="msg_cotainer">${r.content}</p>
-              <spawn class="msg_time">${e.date}</span>
-            </div>
-          </div>
-          `
+        `
           messages.appendChild(item)
           window.scrollTo(0, document.body.scrollHeight)
         } else if (e.event == 'new') {
@@ -181,14 +168,14 @@ String.prototype.toHtmlEntities = function() {
             </div>
             <div class="user_info">
               <span>${e.user}</span>
-              <p>En ligne</p>
+              <p>online</p>
             </div>
           </div>
           `
           document.getElementById('users').appendChild(element)
           window.scrollTo(0, document.body.scrollHeight)
           var item = document.createElement('div')
-          /*item.innerHTML = `
+          item.innerHTML = `
         <div class="d-flex justify-content-start mb-4">
           <div class="img_cont_msg">
             <img src="https://i.pinimg.com/originals/7c/e8/d6/7ce8d6c44b056a3e9eb84d31139f4132.png"
@@ -199,20 +186,7 @@ String.prototype.toHtmlEntities = function() {
               <span class="msg_time">${e.date}</span>
             </div>
           </div>
-        `*/
-          item.innerHTML = `
-          <div class="d-flex justify-content-start mb-4">
-            <div class="img_cont_msg">
-              <img src="${e.avatar || 'https://api.multiavatar.com/error.svg'}"
-                class="rounded-circle user_img_msg">
-            </div>
-            <div class="user_info">
-              <span>${e.user}</span>
-              <p class="msg_cotainer">${r.content}</p>
-              <spawn class="msg_time">${e.date}</span>
-            </div>
-          </div>
-          `
+        `
           messages.appendChild(item)
           window.scrollTo(0, document.body.scrollHeight)
         }
