@@ -100,13 +100,15 @@ var ws = new wss("ws://" + serveur)
 ws.on('message', m => console.log(m))
 
 const PORT = process.env.PORT || 3000;
-const INDEX = '/index.html';
+const INDEX = '/views/main.ejs';
 
-const wsss = new Server({ server });
 const server = express()
+  .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
+const { Server } = require('ws');
 
-wss.on('connection', (ws) => {
+const wss2 = new Server({ server });
+wss2.on('connection', (ws) => {
   console.log('Client connected');
-  wss.on('close', () => console.log('Client disconnected'));
+  ws.on('close', () => console.log('Client disconnected'));
 });
