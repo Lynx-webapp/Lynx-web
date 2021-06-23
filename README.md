@@ -1,6 +1,6 @@
 # Hi !
 
-Lynx is a simple, crypted, and fast cumunication webapp.
+Lynx is a simple, crypted, and fast communication webapp.
 
 ## To Do
 
