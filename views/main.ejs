@@ -143,7 +143,7 @@ String.prototype.toHtmlEntities = function() {
         console.log(e)
         if (e.event == 'msg') {
           var item = document.createElement('div')
-          item.innerHTML = `
+          /*item.innerHTML = `
         <div class="d-flex justify-content-start mb-4">
           <div class="img_cont_msg">
             <img src="${e.avatar || 'https://api.multiavatar.com/error.svg'}"
@@ -154,7 +154,20 @@ String.prototype.toHtmlEntities = function() {
               <span class="msg_time">${e.date}</span>
             </div>
           </div>
-        `
+        `*/
+          item.innerHTML = `
+          <div class="d-flex justify-content-start mb-4">
+            <div class="img_cont_msg">
+              <img src="${e.avatar || 'https://api.multiavatar.com/error.svg'}"
+                class="rounded-circle user_img_msg">
+            </div>
+            <div class="user_info">
+              <span>${e.user}</span>
+              <p class="msg_cotainer">${r.content}</p>
+              <spawn class="msg_time">${e.date}</span>
+            </div>
+          </div>
+          `
           messages.appendChild(item)
           window.scrollTo(0, document.body.scrollHeight)
         } else if (e.event == 'new') {
@@ -191,12 +204,11 @@ String.prototype.toHtmlEntities = function() {
           <div class="d-flex justify-content-start mb-4">
             <div class="img_cont_msg">
               <img src="${e.avatar || 'https://api.multiavatar.com/error.svg'}"
-                class="rounded-circle user_img">
-              <span class="online_icon"></span>
+                class="rounded-circle user_img_msg">
             </div>
             <div class="user_info">
               <span>${e.user}</span>
-              <p>${r.content}</p>
+              <p class="msg_cotainer">${r.content}</p>
               <spawn class="msg_time">${e.date}</span>
             </div>
           </div>
