@@ -64,7 +64,7 @@
                 <span class="input-group-text attach_btn"><i class="fas fa-paperclip"></i></span>
               </div>
               <input name="" class="form-control type_msg" id="input" autocomplete="off"
-                placeholder="Envoyer un message" />
+                placeholder="Ecrivez votre message" />
               <div class="input-group-append">
                 <button style="border: none;outline-style: none;"
                   class="fas fa-location-arrow input-group-text send_btn" id="send">Envoyer</button>
@@ -111,11 +111,10 @@ String.prototype.toHtmlEntities = function() {
         item.innerHTML = `
         <div class="d-flex justify-content-start mb-4">
           <div class="img_cont_msg">
-            <img src="${a.avatar || 'https://api.multiavatar.com/error.svg'} ${e.user}"
+            <img src="${a.avatar || 'https://api.multiavatar.com/error.svg'}"
             class="rounded-circle user_img_msg">
             </div>
             <div class="msg_cotainer">
-
               ${a.content.toHtmlEntities()}
               <span class="msg_time">${a.CreatedAt}</span>
             </div>
@@ -147,11 +146,10 @@ String.prototype.toHtmlEntities = function() {
           item.innerHTML = `
         <div class="d-flex justify-content-start mb-4">
           <div class="img_cont_msg">
-            <img src="${e.avatar || 'https://api.multiavatar.com/error.svg'} ${e.user}"
+            <img src="${e.avatar || 'https://api.multiavatar.com/error.svg'}"
             class="rounded-circle user_img_msg">
             </div>
             <div class="msg_cotainer">
-
               ${r.content}
               <span class="msg_time">${e.date}</span>
             </div>
@@ -177,7 +175,7 @@ String.prototype.toHtmlEntities = function() {
           document.getElementById('users').appendChild(element)
           window.scrollTo(0, document.body.scrollHeight)
           var item = document.createElement('div')
-          item.innerHTML = `
+          /*item.innerHTML = `
         <div class="d-flex justify-content-start mb-4">
           <div class="img_cont_msg">
             <img src="https://i.pinimg.com/originals/7c/e8/d6/7ce8d6c44b056a3e9eb84d31139f4132.png"
@@ -188,7 +186,21 @@ String.prototype.toHtmlEntities = function() {
               <span class="msg_time">${e.date}</span>
             </div>
           </div>
-        `
+        `*/
+          item.innerHTML = `
+          <div class="d-flex justify-content-start mb-4">
+            <div class="img_cont_msg">
+              <img src="${e.avatar || 'https://api.multiavatar.com/error.svg'}"
+                class="rounded-circle user_img">
+              <span class="online_icon"></span>
+            </div>
+            <div class="user_info">
+              <span>${e.user}</span>
+              <p>${r.content}</p>
+              <spawn class="msg_time">${e.date}</span>
+            </div>
+          </div>
+          `
           messages.appendChild(item)
           window.scrollTo(0, document.body.scrollHeight)
         }
