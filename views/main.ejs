@@ -104,7 +104,8 @@ String.prototype.toHtmlEntities = function() {
       event: 'new',
       avatar: '<%=user.avatar%>' || 'https://api.multiavatar.com/error.svg'
     }))
-    function getmsg() {
+    // Ici c'est le code des messages
+    function getmsg() { 
       console.log(JSON.parse(JSON.stringify( <%-data.msg %> )))
       JSON.parse(JSON.stringify( <%-data.msg%> )).slice(Number('<%=data.number%>') < 20 ? 0 : -20).forEach(a => {
         var item = document.createElement('div')
@@ -113,9 +114,10 @@ String.prototype.toHtmlEntities = function() {
           <div class="img_cont_msg">
             <img src="${a.avatar || 'https://api.multiavatar.com/error.svg'}"
             class="rounded-circle user_img_msg">
+            <span>${a.user}</span>
             </div>
             <div class="msg_cotainer">
-              test ${a.content.toHtmlEntities()}
+              ${a.content.toHtmlEntities()}
               <span class="msg_time">${a.CreatedAt}</span>
             </div>
           </div>
