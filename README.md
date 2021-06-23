@@ -1,6 +1,6 @@
 # Hi !
 
-Lynx is a simple, crypted, and fast communication webapp.
+Lynx is a simple, crypted, and fast communication web-app.
 
 ## To Do
 
@@ -13,3 +13,8 @@ Lynx is a simple, crypted, and fast communication webapp.
 - [ ] Profile settings
 - [ ] user ID
 - [ ] user TAG
+
+Dev: 
+- +213 PURGINGGG
+- Apoo
+- Lopimake
