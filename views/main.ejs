@@ -64,7 +64,7 @@
                 <span class="input-group-text attach_btn"><i class="fas fa-paperclip"></i></span>
               </div>
               <input name="" class="form-control type_msg" id="input" autocomplete="off"
-                placeholder="Type your message..." />
+                placeholder="Envoyer un message" />
               <div class="input-group-append">
                 <button style="border: none;outline-style: none;"
                   class="fas fa-location-arrow input-group-text send_btn" id="send">Envoyer</button>
@@ -111,10 +111,11 @@ String.prototype.toHtmlEntities = function() {
         item.innerHTML = `
         <div class="d-flex justify-content-start mb-4">
           <div class="img_cont_msg">
-            <img src="${a.avatar || 'https://api.multiavatar.com/error.svg'}"
+            <img src="${a.avatar || 'https://api.multiavatar.com/error.svg'} ${e.user}"
             class="rounded-circle user_img_msg">
             </div>
             <div class="msg_cotainer">
+
               ${a.content.toHtmlEntities()}
               <span class="msg_time">${a.CreatedAt}</span>
             </div>
@@ -146,10 +147,11 @@ String.prototype.toHtmlEntities = function() {
           item.innerHTML = `
         <div class="d-flex justify-content-start mb-4">
           <div class="img_cont_msg">
-            <img src="${e.avatar || 'https://api.multiavatar.com/error.svg'}"
+            <img src="${e.avatar || 'https://api.multiavatar.com/error.svg'} ${e.user}"
             class="rounded-circle user_img_msg">
             </div>
             <div class="msg_cotainer">
+
               ${r.content}
               <span class="msg_time">${e.date}</span>
             </div>
