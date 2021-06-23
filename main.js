@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
   if(req.query.guild) {
     req.session.guild = req.query.guild
   }
-  req.session.username = req.query.username || 'Utilisateur0000'
+  req.session.username = req.query.username || 'Utilisateur Inconnu'
   req.session.avatar = `https://api.multiavatar.com/${req.session.username}.svg`
   var arr = [],
     users,
