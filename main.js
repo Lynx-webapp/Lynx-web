@@ -14,7 +14,7 @@ app.use(require('express').static(__dirname + '/public'));
 process.env.key = 'hey'
 app.use(session({ secret: process.env.key, resave: true, saveUninitialized: true }))
 
-var serveur = "speakjs.herokuapp.com"
+var serveur = "lynxapp-web.herokuapp.com"
 
 app.get('/', (req, res) => {
   if(!req.query.guild) {req.session.guild = serveur}
